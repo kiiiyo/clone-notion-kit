@@ -4,9 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "postinstall": "husky install",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "commitlint": "commitlint -e $GIT_PARAMS",
     "lint": "prettier -c './**/*.{js,cjs,ts,tsx,md}';    eslint './**/*.{js,cjs,ts,tsx}';",
     "format": "prettier -c './**/*.{js,cjs,ts,tsx,md}' -w; eslint './**/*.{js,cjs,ts,tsx}' --fix;"
   },
