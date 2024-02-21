@@ -5,6 +5,7 @@ import eslintConfigPrettier from 'eslint-config-prettier';
 import nextConfig from './eslint-rules/next.js';
 import reactHooksConfig from './eslint-rules/react-hooks.js';
 import reactConfig from './eslint-rules/react.js';
+import storybookConfig from './eslint-rules/storybook.js';
 
 export default [
   {
@@ -39,6 +40,12 @@ export default [
   {
     files: ['**/*.tsx', '**/*.ts'],
     ...nextConfig,
+  },
+
+  /* Storybook */
+  {
+    files: ['**/*.stories.tsx'],
+    ...storybookConfig,
   },
 
   /* prettier */
