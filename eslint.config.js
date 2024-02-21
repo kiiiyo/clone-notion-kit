@@ -19,7 +19,7 @@ export default [
 
   /* ignores */
   {
-    ignores: ['.next/*', '.trunk/*', '.eslintrc.cjs', '**/*.config.*', 'eslint-rules/*'],
+    ignores: ['.next/*', '.trunk/*', '.eslintrc.cjs', '**/*.config.*', 'eslint-rules/*', '.storybook/*'],
   },
 
   js.configs.recommended,
