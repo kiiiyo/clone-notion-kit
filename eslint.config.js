@@ -2,10 +2,12 @@ import js from '@eslint/js';
 import typescriptEslintParser from '@typescript-eslint/parser';
 import eslintConfigPrettier from 'eslint-config-prettier';
 
-import nextConfig from './eslint-rules/next.js';
-import reactHooksConfig from './eslint-rules/react-hooks.js';
-import reactConfig from './eslint-rules/react.js';
-import storybookConfig from './eslint-rules/storybook.js';
+import nextConfig from './eslint-configs/next.js';
+import reactHooksConfig from './eslint-configs/react-hooks.js';
+import reactConfig from './eslint-configs/react.js';
+import storybookConfig from './eslint-configs/storybook.js';
+import importConfig from './eslint-configs/import.js';
+import typescriptConfig from './eslint-configs/typescript.js';
 
 export default [
   {
@@ -17,12 +19,31 @@ export default [
     },
   },
 
-  /* ignores */
+  /* Ignores */
   {
-    ignores: ['.next/*', '.trunk/*', '.eslintrc.cjs', '**/*.config.*', 'eslint-rules/*', '.storybook/*'],
+    ignores: ['.next/*', '.trunk/*', '.storybook/*', '**/*.config.*', 'eslint-configs/*'],
+  },
+
+  /* Basic Rules */
+  {
+    rules: {
+      'no-unused-vars': ['off'],
+    },
   },
 
   js.configs.recommended,
+
+  /* Typescript */
+  {
+    files: ['**/*.ts', '**/*.tsx'],
+    ...typescriptConfig,
+  },
+
+  /* Import */
+  {
+    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.mjs'],
+    ...importConfig,
+  },
 
   /* React */
   {
@@ -48,6 +69,6 @@ export default [
     ...storybookConfig,
   },
 
-  /* prettier */
+  /* Prettier */
   eslintConfigPrettier,
 ];
