@@ -10,6 +10,7 @@ export default {
   rules: {
     ...importPlugin.configs.recommended.rules,
     'unused-imports/no-unused-imports': 'error',
+    'import/no-unresolved': ['off'],
     'import/order': [
       'error',
       {
