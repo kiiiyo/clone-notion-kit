@@ -2,5 +2,7 @@
 import { configs as storybookConfigs } from 'eslint-plugin-storybook';
 
 export default {
-  extends: [storybookConfigs.recommended],
+  plugins: {
+    'storybook/recommended': storybookConfigs.recommended,
+  },
 };
