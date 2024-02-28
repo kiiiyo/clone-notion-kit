@@ -7,6 +7,17 @@ export default {
     'unused-imports': unusedImportPlugin,
   },
 
+  settings: {
+    // This will do the trick
+    'import/parsers': {
+      espree: ['.js', '.cjs', '.mjs', '.jsx'],
+    },
+    'import/resolver': {
+      typescript: true,
+      node: true,
+    },
+  },
+
   rules: {
     ...importPlugin.configs.recommended.rules,
     'unused-imports/no-unused-imports': 'error',

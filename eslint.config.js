@@ -14,6 +14,8 @@ export default [
     languageOptions: {
       parser: typescriptEslintParser,
       parserOptions: {
+        sourceType: 'module',
+        ecmaVersion: 2022,
         project: ['./**/tsconfig.json'],
       },
     },
