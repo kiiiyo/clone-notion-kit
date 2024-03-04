@@ -11,6 +11,12 @@ import typescriptConfig from './eslint-configs/typescript.js';
 
 export default [
   {
+    env: {
+      browser: true,
+      node: true,
+    },
+  },
+  {
     languageOptions: {
       parser: typescriptEslintParser,
       parserOptions: {
