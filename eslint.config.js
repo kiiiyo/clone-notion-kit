@@ -8,16 +8,15 @@ import reactConfig from './eslint-configs/react.js';
 import storybookConfig from './eslint-configs/storybook.js';
 import importConfig from './eslint-configs/import.js';
 import typescriptConfig from './eslint-configs/typescript.js';
+import globals from 'globals';
 
 export default [
   {
-    env: {
-      browser: true,
-      node: true,
-    },
-  },
-  {
     languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
       parser: typescriptEslintParser,
       parserOptions: {
         sourceType: 'module',
